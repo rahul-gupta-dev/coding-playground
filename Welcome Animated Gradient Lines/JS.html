@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn JavaScript from Basics to Advanced - Variables, Arrays, Functions, Promises, and more in a beautiful SPA layout."
+    />
+    <meta
+      name="keywords"
+      content="JavaScript, Tutorial, SPA, HTML, CSS, Web Development"
+    />
+    <meta name="author" content="Rahul Gupta" />
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta
+      property="og:title"
+      content="JavaScript Concepts Playground | Rahul Gupta"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://rahul-gupta-dev.github.io/Portfolio/"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="" />
+    <link rel="stylesheet" href="JS.css" />
+    <title>JavaScript Concepts Playground</title>
+  </head>
+  <body>
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <header>
+      🌐 JavaScript Concepts Playground
+
+      <nav>
+        <button onclick="showPage('variables')">Variables</button>
+        <button onclick="showPage('arrays')">Arrays</button>
+        <button onclick="showPage('functions')">Functions</button>
+        <button onclick="showPage('promises')">Promises</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="variables">
+        <h2>🔤 Variables</h2>
+        <p>
+          JavaScript supports <code>var</code>, <code>let</code>, and
+          <code>const</code>. Use <code>let</code> and <code>const</code> for
+          block scope and better control.
+        </p>
+        <pre><code>let name = 'Rahul';
+const age = 25;</code></pre>
+      </section>
+
+      <section id="arrays" class="hidden">
+        <h2>📚 Arrays</h2>
+        <p>Arrays store multiple values in a single variable.</p>
+        <pre><code>let fruits = ['apple', 'banana', 'mango'];
+console.log(fruits[1]); // banana</code></pre>
+      </section>
+
+      <section id="functions" class="hidden">
+        <h2>🧠 Functions</h2>
+        <p>Functions help reuse logic.</p>
+        <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greet('Rahul'));</code></pre>
+      </section>
+
+      <section id="promises" class="hidden">
+        <h2>⏳ Promises</h2>
+        <p>Promises handle asynchronous operations.</p>
+        <pre><code>const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Data received"), 1000);
+});
+
+promise.then(console.log);</code></pre>
+      </section>
+    </main>
+
+    <footer>© 2025 Rahul Gupta | Made with 💙 in Pune</footer>
+
+    <script>
+      function showPage(id) {
+        document
+          .querySelectorAll("section")
+          .forEach((sec) => sec.classList.add("hidden"));
+        document.getElementById(id).classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>

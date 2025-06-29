@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #1f1c2c, #928dab);
+  overflow-x: hidden;
+  color: #fff;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #282c34;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav {
+  background: #3a3c5b;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+nav button {
+  background: #4a4e69;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+nav button:hover {
+  background: #6c6cb9;
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+footer {
+  background: #27293d;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+.hidden {
+  display: none;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+.lines {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  top: -20%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  animation: drop 5s linear infinite;
+}
+
+.line:nth-child(1)::after {
+  animation-delay: 1s;
+}
+.line:nth-child(2)::after {
+  animation-delay: 2s;
+}
+.line:nth-child(3)::after {
+  animation-delay: 3s;
+}
+.line:nth-child(4)::after {
+  animation-delay: 4s;
+}
+
+@keyframes drop {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 120%;
+  }
+}
