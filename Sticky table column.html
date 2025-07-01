@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fixed Delete Button Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      white-space: nowrap;
+    }
+
+    /* Make the last column (Delete button) sticky */
+    th:last-child,
+    td:last-child {
+      position: sticky;
+      right: 0;
+      background: #fff;
+    }
+
+    /* Optional styling for delete button */
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .delete-btn:hover {
+      background-color: rgb(247, 32, 32);
+      transform: scale(.98);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Scrollable Table with Fixed Delete Button</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>Department</th>
+          <th>Status</th>
+          <th>City</th>
+          <th>Skills</th>
+          <th>Personal Email</th>
+          <th>Action</th> <!-- Sticky column -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1000104</td>
+          <td>Rahul Gupta</td>
+          <td>rahul.gupta@sanglob.in</td>
+          <td>7580803042</td>
+          <td>Developer</td>
+          <td style="text-align: center;">IT</td>
+          <td>Active</td>
+          <td>Pune</td>
+          <td>MERN Stack, Wordpress, PHP, Laravel</td>
+          <td>rahulg6235035@gmail.com</td>
+          <td><button class="delete-btn">Delete</button></td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Shivam Singh</td>
+          <td>shivam@sanglob.in</td>
+          <td>9981530506</td>
+          <td>UI/UX</td>
+          <td style="text-align: center;">IT</td>
+          <td>Active</td>
+          <td>Pune</td>
+          <td>Digital Marketing, Figma, Adobe XD, UI/UX</td>
+          <td>shiv75@gmail.com</td>
+          <td><button class="delete-btn">Delete</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
