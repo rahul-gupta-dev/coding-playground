@@ -84,9 +84,9 @@ nav.open .nav-content span {
 
 .nav-content span a i {
   font-size: 20px;
-  transform: rotate(calc(var(--i) * -45deg));
   opacity: 0.8;
   transition: 0.3s ease;
+  transform: rotate(calc(var(--i) * -45deg));
 }
 
 .nav-content span a:hover i {
