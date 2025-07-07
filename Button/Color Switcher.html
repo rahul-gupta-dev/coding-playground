@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Switcher</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+      button {
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">Choose a color</div>
+    <div id="buttonContainer"></div>
+
+    <script>
+      const colors = ["Red", "Blue", "Black", "Yellow", "Pink"],
+        info = document.getElementById("info"),
+        body = document.body,
+        container = document.getElementById("buttonContainer"),
+        savedColor = localStorage.getItem("bgColor");
+
+      if(savedColor) {
+        body.style.background = savedColor;
+        info.textContent = `Selected: ${savedColor}`;
+      }
+
+      colors.forEach((color) => {
+        const btn = document.createElement("button");
+        btn.textContent = color;
+        btn.style = `background: ${color}; color: ${
+          (color == "Pink" || color == "Black") ? "#fff" : "#000"
+        }; border:none`;
+
+        btn.onclick = () => {
+          body.style.background = color;
+          info.textContent = `Selected: ${color}`;
+          localStorage.setItem("bgColor", color);
+        };
+
+        container.appendChild(btn);
+      });
+    </script>
+  </body>
+</html>

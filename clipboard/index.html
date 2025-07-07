@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✅ Resume Review Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>📄 Resume Review Assistant</h1>
+
+    <form class="section" onsubmit="return validateChecklist('pos-checkbox')">
+        <h2>👍 Good Points</h2>
+        <div class="pos">
+            <label><input type="checkbox" class="pos-checkbox" checked required /> <span>Full Stack Developer</span></label>
+            <label><input type="checkbox" class="pos-checkbox" checked /> <span>MERN Stack Developer</span></label>
+            <label><input type="checkbox" class="pos-checkbox" checked /> <span>Backend Developer</span></label>
+            <label><input type="checkbox" class="pos-checkbox" /> <span>FrontEnd Developer</span></label>
+            <label><input type="checkbox" class="pos-checkbox" /> <span>Concise and focused career
+                    objective</span></label>
+            <label><input type="checkbox" class="pos-checkbox" checked /> <span>Email Developer</span></label>
+            <label><input type="checkbox" class="pos-checkbox" /> <span>Relevant CS coursework listed</span></label>
+            <label><input type="checkbox" class="pos-checkbox" checked /> <span>Good display of programming
+                    skills</span></label>
+            <label><input type="checkbox" class="pos-checkbox" /> <span>Detailed project section</span></label>
+            <label><input type="checkbox" class="pos-checkbox" /> <span>Highlighted internships</span></label>
+            <label><input type="checkbox" class="pos-checkbox" checked /> <span>Workshops & certifications
+                    mentioned</span></label>
+            <label><input type="checkbox" class="pos-checkbox" checked /> <span>Extracurriculars & achievements
+                    shown</span></label>
+        </div>
+        <button type="button" class="copy" onclick="copyToClipboard(posDone, 'pos-list', this)">Copy Positives</button>
+        <ul id="pos-list"></ul>
+    </form>
+
+    <form class="section" onsubmit="return validateChecklist('neg-checkbox')">
+        <h2>⚠️ Suggestions for Improvement</h2>
+        <div class="neg">
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Fix alignment and spacing</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Save resume as PDF</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Make resume text selectable</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Correct grammar using Grammarly</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Ensure all links are clickable</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Use a formal photo if used</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Add LinkedIn profile</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Include GitHub or code
+                    repos</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Keep career objective original and
+                    short</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Add dates and durations to
+                    education</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Use reverse chronological order</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Include grades or percentages</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Mention 10+2 qualification</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Highlight dev-focused
+                    courses</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Be specific with tech stack</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Show project roles, duration,
+                    code</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Highlight internship
+                    details</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Add hackathon
+                    achievements</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>List more certifications</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Give real examples of strengths</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Showcase extracurricular
+                    wins</span></label>
+            <label><input type="checkbox" class="neg-checkbox" checked /> <span>Mention leadership
+                    experience</span></label>
+            <label><input type="checkbox" class="neg-checkbox" /> <span>Highlight soft skills</span></label>
+        </div>
+        <button type="button" class="copy" onclick="copyToClipboard(negDone, 'neg-list', this)">Copy
+            Improvements</button>
+        <ul id="neg-list"></ul>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
