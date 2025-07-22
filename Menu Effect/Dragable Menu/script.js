@@ -3,26 +3,36 @@ const toggleBtn = nav.querySelector(".toggle-btn");
 
 toggleBtn.addEventListener("click", () => {
   nav.classList.toggle("open");
+  toggleBtn.classList.toggle("active");
 });
 
-function onDrag({ movementY }) {
-  const navStyle = window.getComputedStyle(nav);
-  const navTop = parseInt(navStyle.top);
-  const navHeight = parseInt(navStyle.height);
-  const winHeight = window.innerHeight;
+// DRAGGING LOGIC
+let isDragging = false;
+let startY;
+let startTop;
 
-  let newTop = navTop + movementY;
-  if (newTop < 0) newTop = 0;
-  if (newTop > winHeight - navHeight) newTop = winHeight - navHeight;
+function onMouseDown(e) {
+  isDragging = true;
+  startY = e.clientY;
+  startTop = parseInt(window.getComputedStyle(nav).top);
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", onMouseUp);
+}
+
+function onMouseMove(e) {
+  if (!isDragging) return;
+  const deltaY = e.clientY - startY;
+  const newTop = Math.min(
+    Math.max(0, startTop + deltaY),
+    window.innerHeight - nav.offsetHeight
+  );
   nav.style.top = `${newTop}px`;
 }
 
-nav.addEventListener("mousedown", () => {
-  nav.addEventListener("mousemove", onDrag);
-});
+function onMouseUp() {
+  isDragging = false;
+  document.removeEventListener("mousemove", onMouseMove);
+  document.removeEventListener("mouseup", onMouseUp);
+}
 
-["mouseup", "mouseleave"].forEach((evt) =>
-  nav.addEventListener(evt, () => {
-    nav.removeEventListener("mousemove", onDrag);
-  })
-);
+nav.addEventListener("mousedown", onMouseDown);
